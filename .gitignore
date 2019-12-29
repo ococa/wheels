@@ -6,3 +6,7 @@
 *.idea
 
 *.vscode
+
+.cache
+
+/dist
