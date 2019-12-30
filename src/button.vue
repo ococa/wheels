@@ -1,9 +1,7 @@
 
 <template>
-    <button class="g-button" :class="{[`icon-${iconPosition}`]: true}">
-        <svg v-if="icon" class="icon">
-            <use :xlink:href="`#i-${icon}`"></use>
-        </svg>
+    <button class="o-button" :class="{[`icon-${iconPosition}`]: true}">
+        <o-icon class="icon" v-if="icon" :name="icon"></o-icon>
         <div class="content">
             <slot></slot>
         </div>
@@ -26,7 +24,7 @@
     }
 </script>
 <style lang="scss">
-    .g-button {
+    .o-button {
         font-size: var(--font-size);
         height: var(--button-height);
         padding: 0 1em;
