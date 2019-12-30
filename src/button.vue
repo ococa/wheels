@@ -11,7 +11,18 @@
 </template>
 <script>
     export default {
-        props: ['icon', 'iconPosition'],
+        // props: ['icon', 'iconPosition'],
+        props: {
+            icon: {},
+            iconPosition: {
+                type: String,
+                default: 'left',
+                validator(value) {
+                    console.log('value', value);
+                    return value === 'left' || value === 'right';
+                }
+            }
+        }
     }
 </script>
 <style lang="scss">
@@ -44,7 +55,7 @@
                 margin: 0 0 0 0.3em;
             }
             > .content {
-                order: 1;K
+                order: 1;
             }
         }
     }
