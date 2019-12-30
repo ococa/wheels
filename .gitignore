@@ -1,7 +1,7 @@
 /node_modules
 
 
-*.lock
+*-lock.json
 
 *.idea
 
@@ -10,3 +10,5 @@
 .cache
 
 /dist
+
+*.log
