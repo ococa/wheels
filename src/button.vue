@@ -1,4 +1,3 @@
-
 <template>
     <button class="o-button" :class="{[`icon-${iconPosition}`]: true}" @click="$emit('click')">
         <o-icon class="icon" v-if="icon && !loading" :name="icon"></o-icon>
