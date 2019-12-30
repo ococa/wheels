@@ -1,7 +1,8 @@
 
 <template>
-    <button class="o-button" :class="{[`icon-${iconPosition}`]: true}">
-        <o-icon class="icon" v-if="icon" :name="icon"></o-icon>
+    <button class="o-button" :class="{[`icon-${iconPosition}`]: true}" @click="$emit('click')">
+        <o-icon class="icon" v-if="icon && !loading" :name="icon"></o-icon>
+        <o-icon class="loading icon" v-if="loading" name="loading"></o-icon>
         <div class="content">
             <slot></slot>
         </div>
@@ -12,6 +13,10 @@
         // props: ['icon', 'iconPosition'],
         props: {
             icon: {},
+            loading: {
+                type: Boolean,
+                default: false,
+            },
             iconPosition: {
                 type: String,
                 default: 'left',
@@ -20,10 +25,19 @@
                     return value === 'left' || value === 'right';
                 }
             }
+        },
+        methods: {
+            btnClick(...args){
+                console.log('args', args)
+            }
         }
     }
 </script>
 <style lang="scss">
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
     .o-button {
         font-size: var(--font-size);
         height: var(--button-height);
@@ -56,5 +70,9 @@
                 order: 1;
             }
         }
+        .loading {
+            animation: spin 1s infinite linear;
+        }
     }
+
 </style>
