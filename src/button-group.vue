@@ -6,6 +6,14 @@
 
 <script>
     export default {
+        mounted() {
+            console.log(this.$el.children);
+            for (let node of this.$el.children) {
+                if (node.nodeName.toLowerCase() !== 'button') {
+                    console.warn('o-button-group的子元素应该全是o-button')
+                }
+            }
+        }
     }
 </script>
 
