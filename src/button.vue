@@ -20,14 +20,12 @@
                 type: String,
                 default: 'left',
                 validator(value) {
-                    console.log('value', value);
                     return value === 'left' || value === 'right';
                 }
             }
         },
         methods: {
             btnClick(...args){
-                console.log('args', args)
             }
         }
     }
