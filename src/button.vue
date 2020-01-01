@@ -8,8 +8,12 @@
     </button>
 </template>
 <script>
+    import Icon from './icon';
     export default {
         // props: ['icon', 'iconPosition'],
+        component: {
+            'o-icon': Icon,
+        },
         props: {
             icon: {},
             loading: {

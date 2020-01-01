@@ -16,6 +16,9 @@ new Vue({
 });
 
 import chai from 'chai';
+import spies from 'chai-spies';
+
+chai.use(spies);
 const expect = chai.expect;
 
 {
@@ -99,11 +102,10 @@ const expect = chai.expect;
         }
     });
     oButton.$mount();
-    oButton.$on('click', function () {
-        console.log(1)
-    });
+    let spy = chai.spy(function () {});
+    oButton.$on('click', spy);
     oButton.$el.click();
 
-    oButton.$el.remove();
-    oButton.$destroy();
+    expect(spy).to.have.been.called();
+
 }
