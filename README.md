@@ -6,7 +6,7 @@
 
 ## 开始使用
 
-1. 安装
+1. 添加css样式
 使用本框架前，请在css 中开启 border-box 
 ```css
 *, *::before, *::after{ box-sizing: border-box }
@@ -24,7 +24,26 @@
     --border-color-horver: #666;
 }
 ```
+2. install
+```
+npm i --save o-coui
+```
+3. import 'o-coui'
+```javascript
+import { Button } from 'o-coui';
+import 'o-coui/dist/index.css';
 
+export default {
+  name: 'app',
+  components: {
+    Button
+  }
+}
+```
+4. import svg symbols
+```html
+<script src="//at.alicdn.com/t/font_1590521_wqo0d4mj94.js"></script>
+```
 ## 文档
 
 ## 提问
