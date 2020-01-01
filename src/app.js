@@ -2,10 +2,12 @@ import Vue from 'vue';
 import Button from './button';
 import Icon from './icon';
 import ButtonGroup from './button-group';
+import Input from './input';
 
 Vue.component('o-button', Button);
-Vue.component('Icon', Icon);
+Vue.component('o-icon', Icon);
 Vue.component('o-button-group', ButtonGroup);
+Vue.component('o-input', Input);
 
 new Vue({
     el: '#app',

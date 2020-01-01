@@ -8,12 +8,11 @@
     import './svg';
 
     export default {
-        name: 'Icon',
+        name: 'OIcon',
         props: {
             name: String,
         },
     }
-
 </script>
 
 <style lang="scss">
