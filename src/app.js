@@ -4,7 +4,7 @@ import Icon from './icon';
 import ButtonGroup from './button-group';
 
 Vue.component('o-button', Button);
-Vue.component('o-icon', Icon);
+Vue.component('Icon', Icon);
 Vue.component('o-button-group', ButtonGroup);
 
 new Vue({

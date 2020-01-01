@@ -1,7 +1,7 @@
 <template>
     <button class="o-button" :class="{[`icon-${iconPosition}`]: true}" @click="$emit('click')">
-        <o-icon class="icon" v-if="icon && !loading" :name="icon"></o-icon>
-        <o-icon class="loading icon" v-if="loading" name="loading"></o-icon>
+        <Icon :name="icon" class="icon" v-if="icon && !loading"></Icon>
+        <Icon class="loading icon" name="loading" v-if="loading"></Icon>
         <div class="content">
             <slot></slot>
         </div>
@@ -12,7 +12,7 @@
     export default {
         // props: ['icon', 'iconPosition'],
         components: {
-            'o-icon': Icon,
+            Icon,
         },
         props: {
             icon: {},

@@ -1,14 +1,15 @@
 {
   "name": "o-coui",
-  "version": "0.0.6",
+  "version": "0.0.10",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "s": "parcel ./index.html",
-    "build": "parcel build ./index.js",
-    "r": "rm -rf dist && rm -rf .cache && parcel ./index.html",
+    "start": "parcel ./index.html",
+    "build": "npm run clean &&  parcel build ./index.js  --no-cache --no-minify ",
+    "restart": "npm run clean && parcel ./index.html",
     "dev-test": "parcel watch test/* --no-cache & karma start",
-    "test": "parcel build test/* --no-cache --no-minify && karma start --single-run"
+    "test": "parcel build test/* --no-cache --no-minify && karma start --single-run",
+    "clean": "rm -rf dist && rm -rf .cache"
   },
   "author": "",
   "license": "ISC",
