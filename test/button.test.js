@@ -12,22 +12,26 @@ describe('Button', () => {
     })
 
     it('可以设置icon.', () => {
-        const Constructor = Vue.extend(Button)
-        const vm = new Constructor({
+        const Constructor = Vue.extend(Button);
+        const button = new Constructor({
             propsData: {
-                icon: 'settings'
+                icon: 'setting'
             }
-        }).$mount()
-        const useElement = vm.$el.querySelector('use')
-        expect(useElement.getAttribute('xlink:href')).to.equal('#i-settings')
-        vm.$destroy()
+        });
+        button.$mount();
+        let useElement = button.$el.querySelector('use');
+        let href = useElement.getAttribute('xlink:href');
+
+        expect(href).to.equal('#i-setting');
+        button.$destroy();
+
     })
 
     it('可以设置loading.', () => {
         const Constructor = Vue.extend(Button)
         const vm = new Constructor({
             propsData: {
-                icon: 'settings',
+                icon: 'setting',
                 loading: true
             }
         }).$mount()
@@ -43,11 +47,11 @@ describe('Button', () => {
         const Constructor = Vue.extend(Button)
         const vm = new Constructor({
             propsData: {
-                icon: 'settings',
+                icon: 'setting',
             }
         }).$mount(div)
         const icon = vm.$el.querySelector('svg')
-        expect(getComputedStyle(icon).order).to.eq('1')
+        expect(getComputedStyle(icon).order).to.eq('0')
         vm.$el.remove()
         vm.$destroy()
     })
@@ -58,12 +62,12 @@ describe('Button', () => {
         const Constructor = Vue.extend(Button)
         const vm = new Constructor({
             propsData: {
-                icon: 'settings',
+                icon: 'setting',
                 iconPosition: 'right'
             }
         }).$mount(div)
         const icon = vm.$el.querySelector('svg')
-        expect(getComputedStyle(icon).order).to.eq('2')
+        expect(getComputedStyle(icon).order).to.eq('21')
         vm.$el.remove()
         vm.$destroy()
     })
@@ -71,7 +75,7 @@ describe('Button', () => {
         const Constructor = Vue.extend(Button)
         const vm = new Constructor({
             propsData: {
-                icon: 'settings',
+                icon: 'setting',
             }
         }).$mount()
 

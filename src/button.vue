@@ -11,7 +11,7 @@
     import Icon from './icon';
     export default {
         // props: ['icon', 'iconPosition'],
-        component: {
+        components: {
             'o-icon': Icon,
         },
         props: {
