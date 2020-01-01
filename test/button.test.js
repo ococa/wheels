@@ -67,7 +67,7 @@ describe('Button', () => {
             }
         }).$mount(div)
         const icon = vm.$el.querySelector('svg')
-        expect(getComputedStyle(icon).order).to.eq('21')
+        expect(getComputedStyle(icon).order).to.eq('2')
         vm.$el.remove()
         vm.$destroy()
     })
