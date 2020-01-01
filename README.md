@@ -9,7 +9,20 @@
 1. 安装
 使用本框架前，请在css 中开启 border-box 
 ```css
-* { box-sizing: border-box }
+*, *::before, *::after{ box-sizing: border-box }
+```
+还需要设置默认颜色等变量
+```css
+:root {
+    --button-height: 32px;
+    --font-size: 14px;
+    --button-bg: white;
+    --button-active-bg: #eee;
+    --button-border-radius: 4px;
+    --color: #999;
+    --border-color: #999;
+    --border-color-horver: #666;
+}
 ```
 
 ## 文档
